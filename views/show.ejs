@@ -8,21 +8,18 @@
 </head>
 <body>
     <div class="container">
+        <a href="/pokemon/">Back to Pokedex</a>
         <h1><%=data.name %></h1>
         <img src="<%=data.img %>" alt="<%=data.name %> Image">
+        <p>TYPE:</p>
         <ul>
-        <li>TYPE:</li>
-            <ul>
-                <!-- <h4>Type:</h4> -->
-                <!-- <li>Type:</li> -->
-                <% for(let i = 0; i < data.type.length; i++) { %>
-                    <li><%=data.type[i] %></li>
+            <% for(let i = 0; i < data.type.length; i++) { %> 
+                <li name="type"><%=data.type[i] %></li>
                 <% } %>
-            </ul>
-            <li>HP: <%=data.stats.hp %></li>
-            <li>ATTACK: <%=data.stats.attack %></li>
-            <li>DEFENSE: <%=data.stats.defense %></li>
         </ul>
-    
+            <p name="hp" >HP: <%=data.stats.hp %></p>
+            <p name="attack" >ATTACK: <%=data.stats.attack %></p>
+            <p name="defense" >DEFENSE: <%=data.stats.defense %></p>
+    </div>
 </body>
 </html>

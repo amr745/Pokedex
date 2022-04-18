@@ -8,14 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="container">
-                <% for(let i = 0; i < data.length; i++) { %>
-                    <a href="/pokemon/<%=i%>">
-                    <img src=<%=data[i].img %> alt=<%=data[i].name %>>
-                    </a>
-                <% } %>
+        <h1>Pokedex</h1>
+        <a href="/pokemon/new">
+            <button>Add New Pokemon</button>
+        </a>
+        <div>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <h3><%=data[i].name%></h3>
+            <a href="/pokemon/<%=i%>">
+                <img src=<%=data[i].img %> alt=<%=data[i].name %>>
+            </a>
+        <% } %>
         </div>
     </div>
-    
 </body>
 </html>
