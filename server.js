@@ -1,11 +1,11 @@
 const express = require('express');
-let bodyParser = require('body-parser')
+const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const Pokemon = require('./models/pokemon.js');
 
 app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json())
+app.use(methodOverride('_method'))
 
 // INDEX
 app.get('/pokemon', (req, res) => {
@@ -28,8 +28,7 @@ app.get('/pokemon/:id', (req, res) => {
 
 //Create New
 app.post('/pokemon', (req,res) => {
-    const newPokemon = 
-    {
+    const newPokemon = {
         name: req.body.name,
         type: req.body.type.split(','),
         img: req.body.img,
@@ -38,9 +37,37 @@ app.post('/pokemon', (req,res) => {
             attack: req.body.attack,
             defense: req.body.defense
         }
-    }
+    };
     Pokemon.push(newPokemon);
     res.redirect('/pokemon');
+});
+
+app.delete("/pokemon/:id", (req, res) => {
+    const index = req.params.id
+    Pokemon.splice(index, 1)
+    res.redirect(`/pokemon`)
+  })
+
+app.get('/pokemon/:id/edit', (req, res) => {
+        res.render('edit.ejs', {
+            poke: Pokemon[req.params.id],
+            index: req.params.id
+          })
+        })
+
+app.put("/pokemon/:id", (req, res) => {
+    const updatedPokemon = {
+        name: req.body.name,
+        type: req.body.type.split(','),
+        img: req.body.img,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense
+        }
+    };
+    Pokemon[req.params.id] = updatedPokemon;
+    res.redirect(`/pokemon/${req.params.id}`)
 });
 
 app.listen(3000, () => {

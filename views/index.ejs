@@ -18,6 +18,12 @@
             <a href="/pokemon/<%=i%>">
                 <img src=<%=data[i].img %> alt=<%=data[i].name %>>
             </a>
+            <form action="/pokemon/<%=i%>?_method=DELETE" method="post">
+                <input type="submit" value="DELETE">
+            </form>
+            <a href="/pokemon/<%=i%>/edit">
+                <button>Edit</button>
+              </a>
         <% } %>
         </div>
     </div>

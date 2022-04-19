@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/pokemon/">Back to Pokedex</a>
+    <h1>Edit <%= poke.name %> Page</h1>
+    <form action="/pokemon/<%=index%>?_method=PUT" method="post">
+        Name: <input type="text" name="name" value="<%=poke.name%>"> <br/>
+        Image: <input type="text" name="img" value="<%=poke.img%>"/>  <br/>
+        Type: <input type="text" name="type" value="<%=poke.type%>"> <br/>
+        HP: <input type="text" name="hp" value="<%=poke.stats.hp%>"> <br/>
+        Attack: <input type="text" name="attack" value="<%=poke.stats.attack%>"> <br/>
+        Defense: <input type="text" name="defense" value="<%=poke.stats.defense%>"> <br/>
+        <input type="submit" value="Update Pokemon">
+    </form>
+</body>
+</html>
