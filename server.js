@@ -5,7 +5,8 @@ const PORT = process.env.PORT || 3001;
 const Pokemon = require('./models/pokemon.js');
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+app.use(express.static("public"));
 
 // INDEX
 app.get('/pokemon', (req, res) => {
@@ -26,7 +27,7 @@ app.get('/pokemon/:id', (req, res) => {
     });
 });
 
-//Create New
+//CREATE
 app.post('/pokemon', (req,res) => {
     const newPokemon = {
         name: req.body.name,
@@ -42,19 +43,22 @@ app.post('/pokemon', (req,res) => {
     res.redirect('/pokemon');
 });
 
+//DESTROY
 app.delete("/pokemon/:id", (req, res) => {
     const index = req.params.id
     Pokemon.splice(index, 1)
     res.redirect(`/pokemon`)
   })
 
+//EDIT
 app.get('/pokemon/:id/edit', (req, res) => {
-        res.render('edit.ejs', {
-            poke: Pokemon[req.params.id],
-            index: req.params.id
-          })
-        })
+    res.render('edit.ejs', {
+        poke: Pokemon[req.params.id],
+        index: req.params.id
+    })
+})
 
+//UPDATE
 app.put("/pokemon/:id", (req, res) => {
     const updatedPokemon = {
         name: req.body.name,

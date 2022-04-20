@@ -5,27 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+
+
 </head>
 <body>
-    <div class="container">
-        <h1>Pokedex</h1>
-        <a href="/pokemon/new">
-            <button>Add New Pokemon</button>
-        </a>
-        <div>
-        <% for(let i = 0; i < data.length; i++) { %>
-            <h3><%=data[i].name%></h3>
-            <a href="/pokemon/<%=i%>">
-                <img src=<%=data[i].img %> alt=<%=data[i].name %>>
-            </a>
-            <form action="/pokemon/<%=i%>?_method=DELETE" method="post">
-                <input type="submit" value="DELETE">
-            </form>
-            <a href="/pokemon/<%=i%>/edit">
-                <button>Edit</button>
-              </a>
-        <% } %>
+    <h1>Pokedex</h1>
+    <a href="/pokemon/new">
+        <button>Add New Pokemon</button>
+    </a>
+    <!-- <div id="container"> -->
+        <div class="card">
+             <% for(let i = 0; i < data.length; i++) { %>
+                <a href="/pokemon/<%=i%>">
+                    <img class="card_image" src=<%=data[i].img %> alt=<%=data[i].name %>>
+                </a>
+                <div class="card__details">
+                <div class="name"><h3><%=data[i].name%></h3></div>
+                <form action="/pokemon/<%=i%>?_method=DELETE" method="post">
+                    <input type="submit" value="DELETE">
+                </form>
+                <a href="/pokemon/<%=i%>/edit">
+                    <button>Edit</button>
+                </a>
+            </div>
+            <% } %>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 </html>

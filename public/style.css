@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+body {
+    background-color: #0075BE;
+    color: #FFCC00;
+    font-family: 'Pokemon Solid', sans-serif;   
+}
+
+.card_image {
+    width: 100%;
+    border-radius: 12px;
+    border-radius: 5px 5px 0 0;
+    height: 214px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  /* #container { */
+      /* position: absolute; */
+    /* max-width: 300px; */
+    /* margin: 0 auto; */
+    /* margin-top: 20vh; */
+    /* padding: 2px 16px; */
+    /* border: 10px; */
+
+
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem; */
+  /* } */
+
+  .card {
+    background-color: white;
+    border: 1px solid #bacdd8;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    height: 375px;
+    width: 300px;
+    background-color: #FB1B1B;
+    border-color: #0A285F;
+    position: relative;
+    /* text-align: center; */
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+/* 
+  button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+  
+    font-weight: 600;
+    color: #0077ff;
+    background-color: #e0efff;
+  
+    margin: 0 auto;
+    display: block;
+  
+    cursor: pointer;
+  } */
+
+.card__details {
+    /* position: absolute; */
+    /* bottom: 8px;
+    left: 16px; */
+    /* top: 0px; */
+    /* margin: 0px; */
+    margin-top: 0px;
+    border: 20px solid transparent;
+    /* bottom: 8px; */
+    /* left: 16px; */
+    top: 100px;
+    left: 0px;
+    width: 50%;
+    padding: 0px
+    /* width: 100%;    */
+  }
