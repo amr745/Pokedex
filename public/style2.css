@@ -1,0 +1,22 @@
+body {
+    background-color: #0A285F;
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 1px  #0075BE;
+    -webkit-text-fill-color: #FFCC00;
+}
+
+a {
+    color: #5EBDFC;
+    -webkit-text-stroke: 1px  #0075BE;
+    -webkit-text-fill-color: #FFCC00;
+  }
+
+  button {
+    font-family: 'Pokemon Solid', sans-serif;
+    background-color: #5EBDFC;
+  }
+
+  input {
+    font-family: 'Pokemon Solid', sans-serif;
+    background-color: #5EBDFC;
+  }

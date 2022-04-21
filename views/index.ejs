@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
 
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style1.css" />
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-
 
 </head>
 <body>
-    <h1>Pokedex</h1>
-    <a href="/pokemon/new">
-        <button>Add New Pokemon</button>
-    </a>
+    <div id="container">
+        <h1>Pokedex</h1>
+        <a href="/pokemon/new">
+            <button class="new_but">Add New Pokemon</button>
+        </a>
+    </div>
     <% for(let i = 0; i < data.length; i++) { %>
-
-    <div id="container"></div>
         <div class="card">
-                <a href="/pokemon/<%=i%>">
-                    <img class="card_image" src=<%=data[i].img %> alt=<%=data[i].name %>>
-                </a>
-                <div class="card__details">
+            <div id="container"></div>
+            <a href="/pokemon/<%=i%>">
+                <img class="card_image" src=<%=data[i].img %> alt=<%=data[i].name %>>
+            </a>
+            <div class="card__details">
                 <div class="name"><h3><%=data[i].name%></h3></div>
                 <form action="/pokemon/<%=i%>?_method=DELETE" method="post">
                     <input type="submit" value="DELETE">
@@ -33,7 +33,7 @@
                 </a>
             </div>
         </div>
-            <% } %>
-        </div>
+        <% } %>
+    </div>
 </body>
 </html>

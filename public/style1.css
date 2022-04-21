@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+body {
+    background-color: #0A285F;
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 1px  #0075BE;
+    -webkit-text-fill-color: #FFCC00;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+
+.card_image {
+    width: 70%;
+    border-radius: 12px;
+    height: 214px;
+    margin: 0px 0px 0px 40px;
+    position: relative;
+  }
+
+  #container {
+    align-content: stretch;
+    padding: 50px 0px 0px 40px
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    background-color: #FB1B1B;
+    border-color: #D5A100;
+    align-content: space-around
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+.card__details {
+    border: 10px solid transparent;
+  }
+
+  a {
+    color: #5EBDFC;
+    -webkit-text-stroke: 1px  #0075BE;
+    -webkit-text-fill-color: #FFCC00;
+  }
+
+  button {
+    font-family: 'Pokemon Solid', sans-serif;
+    background-color: #5EBDFC;
+  }
+
+  input {
+    font-family: 'Pokemon Solid', sans-serif;
+    background-color: #5EBDFC;
+  }
+
+@media screen and (max-width: 500px)
+{
+  .card_image {
+    width: 50%;
+    margin: 0px 0px 0px 20px;
+  }
+}
